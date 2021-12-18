@@ -1,0 +1,61 @@
+<div class="container" *ngIf="productFormGroup">
+  <form class="mt-4" [formGroup]="productFormGroup!">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        [ngClass]="{
+          'is-invalid': submitted && productFormGroup.controls['name'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && productFormGroup.controls['name'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="productFormGroup.controls['name'].errors['required']">
+          Name is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        id="price"
+        class="form-control"
+        formControlName="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input
+        type="text"
+        id="quantity"
+        class="form-control"
+        formControlName="quantity"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="selected" class="form-check-label me-2">Selected</label>
+      <input
+        type="checkbox"
+        id="selected"
+        class="form-check-input form-check-inline"
+        formControlName="selected"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="available" class="form-label me-2">Available</label>
+      <input
+        type="checkbox"
+        id="available"
+        class="form-check-input form-check-inline"
+        formControlName="available"
+      />
+    </div>
+    <button (click)="onSaveProduct()" class="btn btn-success">Save</button>
+  </form>
+</div>
