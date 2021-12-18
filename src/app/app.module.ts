@@ -7,7 +7,8 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './components/home/home.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { ProductsComponent } from './components/products/products.component'
-import { ProductAddComponent } from './components/products/product-add/product-add.component'
+import { ProductAddComponent } from './components/products/product-add/product-add.component';
+import { ProductEditComponent } from './components/products/product-edit/product-edit.component'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductAddComponent } from './components/products/product-add/product-a
     ProductsComponent,
     HomeComponent,
     ProductAddComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -41,4 +41,13 @@ export class ProductService {
   saveProduct(p: Product): Observable<Product> {
     return this.httpClient.post<Product>(`${environment.host}/products`, p)
   }
+  getProduct(id: number): Observable<Product> {
+    return this.httpClient.get<Product>(`${environment.host}/products/${id}`)
+  }
+  editProduct(p: Product): Observable<Product> {
+    return this.httpClient.put<Product>(
+      `${environment.host}/products/${p.id}`,
+      p,
+    )
+  }
 }
