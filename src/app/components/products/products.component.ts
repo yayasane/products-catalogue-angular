@@ -53,4 +53,18 @@ export class ProductsComponent implements OnInit {
       ),
     )
   }
+
+  onSelectProduct(p: Product) {
+    this.productService.selectProduct(p).subscribe((data) => {
+      p.selected = data.selected
+    })
+  }
+
+  onDelete(p: Product) {
+    let v = confirm('Êtes vous sûre?')
+    v &&
+      this.productService
+        .deleteProduct(p)
+        .subscribe((data) => this.onGetAllProducts())
+  }
 }

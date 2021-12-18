@@ -13,7 +13,7 @@
       "name": "Printer",
       "price": 300,
       "quantity": 100,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
@@ -22,7 +22,7 @@
       "price": 1200,
       "quantity": 100,
       "selected": true,
-      "available": false
+      "available": true
     }
   ]
 }
