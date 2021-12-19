@@ -8,7 +8,10 @@ import { HomeComponent } from './components/home/home.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { ProductsComponent } from './components/products/products.component'
 import { ProductAddComponent } from './components/products/product-add/product-add.component';
-import { ProductEditComponent } from './components/products/product-edit/product-edit.component'
+import { ProductEditComponent } from './components/products/product-edit/product-edit.component';
+import { ProductsNavbarComponent } from './components/products/products-navbar/products-navbar.component';
+import { ProductsListComponent } from './components/products/products-list/products-list.component';
+import { ProductsListItemComponent } from './components/products/products-list-item/products-list-item.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { ProductEditComponent } from './components/products/product-edit/product
     HomeComponent,
     ProductAddComponent,
     ProductEditComponent,
+    ProductsNavbarComponent,
+    ProductsListComponent,
+    ProductsListItemComponent,
   ],
   imports: [
     BrowserModule,
