@@ -9,6 +9,7 @@ import {
 } from 'src/app/state/product.state'
 import { Router } from '@angular/router'
 import { ActionEvent } from '../../state/product.state'
+import { EventDrivenService } from 'src/app/services/event.driven.service'
 
 @Component({
   selector: 'app-products',
@@ -19,10 +20,17 @@ export class ProductsComponent implements OnInit {
   products$?: Observable<AppDataState<Product[]>>
   readonly DataStateEnum = DataStateEnum
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(
+    private eventDrivenService: EventDrivenService,
+    private productService: ProductService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.onGetAllProducts()
+    this.eventDrivenService.sourceEventSubjectObservable.subscribe(
+      (actionEvent: ActionEvent) => this.onActionEvent(actionEvent),
+    )
   }
 
   onGetAllProducts() {

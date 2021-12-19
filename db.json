@@ -2,10 +2,10 @@
   "products": [
     {
       "name": "Computer",
-      "price": "4300",
+      "price": "430",
       "quantity": 600,
-      "selected": false,
-      "available": true,
+      "selected": true,
+      "available": false,
       "id": 1
     },
     {

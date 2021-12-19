@@ -22,7 +22,6 @@
         <app-products-list-item
           *ngFor="let p of results.data"
           [product]="p"
-          (productsEventEmitter)="onActionEvent($event)"
           style="display: contents;"
         ></app-products-list-item>
       </table>
